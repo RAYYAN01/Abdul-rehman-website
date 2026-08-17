@@ -1,6 +1,6 @@
 'use client';
 
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import Footer from '@/components/Footer';
 
@@ -14,15 +14,38 @@ const videos = [
 
 function VideoCard({ src, index }: { src: string; index: number }) {
   const videoRef = useRef<HTMLVideoElement>(null);
-  const [paused, setPaused] = useState(false);
+  const [paused, setPaused] = useState(true);
+  const userPaused = useRef(false);
+
+  useEffect(() => {
+    const el = videoRef.current;
+    if (!el) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && !userPaused.current) {
+          el.play();
+          setPaused(false);
+        } else {
+          el.pause();
+          setPaused(true);
+        }
+      },
+      { threshold: 0.6 }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
 
   const toggle = () => {
     const el = videoRef.current;
     if (!el) return;
     if (el.paused) {
+      userPaused.current = false;
       el.play();
       setPaused(false);
     } else {
+      userPaused.current = true;
       el.pause();
       setPaused(true);
     }
@@ -49,11 +72,10 @@ function VideoCard({ src, index }: { src: string; index: number }) {
       <video
         ref={videoRef}
         src={src}
-        autoPlay
         muted
         loop
         playsInline
-        preload="metadata"
+        preload="none"
         className="h-full w-full object-cover"
       />
 
