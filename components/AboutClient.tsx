@@ -210,7 +210,7 @@ export default function AboutClient() {
               { src: '/property-3.jpeg', title: 'Green Orchid', loc: 'BHEL Layout' },
               { src: '/property-4.jpeg', title: 'AR Mansion', loc: 'Jayanagar 9th Block' },
               { src: '/property-7.jpeg', title: 'Star Residency', loc: 'BTM 1st Stage' },
-              { src: '/property-9.jpeg', title: 'Royal Head', loc: 'BTM 1st Stage' },
+              { src: '/property-9.jpeg', title: 'Royal Heights', loc: 'BTM 1st Stage' },
             ].map((p) => (
               <div key={p.src} className="group overflow-hidden rounded-[24px] border border-black/[0.08] bg-white shadow-sm">
                 <div className="relative h-56 overflow-hidden">
