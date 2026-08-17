@@ -4,7 +4,7 @@ import GalleryClient from '@/components/GalleryClient';
 export const metadata: Metadata = {
   title: 'Gallery',
   description:
-    'Watch video walkthroughs of premium properties by Ariston Developers across Bangalore — Marvella Heights, AR Mansion, Star Residency and more.',
+    'Watch video walkthroughs of premium properties by Ariston Developers across Bangalore — Green Orchid, AR Mansion, Star Residency and more.',
   openGraph: {
     title: 'Gallery | Ariston Developers',
     description: 'Video walkthroughs of our premium residential developments across Bangalore.',

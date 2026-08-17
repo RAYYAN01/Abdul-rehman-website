@@ -101,8 +101,6 @@ export default function Footer() {
             <p className="font-semibold text-[#1A1A18]">Abdul Rehaman</p>
             <a href="tel:+919945726707" className="transition hover:text-[#D4AF37]">+91 99457 26707</a>
             <a href="tel:08041711912" className="transition hover:text-[#D4AF37]">080-41711912</a>
-            <p className="mt-2 font-semibold text-[#1A1A18]">Sayyed Altaf</p>
-            <a href="tel:+919901845622" className="transition hover:text-[#D4AF37]">+91 99018 45622</a>
             <a href="mailto:ariston1632@gmail.com" className="transition hover:text-[#D4AF37]">ariston1632@gmail.com</a>
             <a href="https://www.aristondevelopers.com" target="_blank" rel="noreferrer" className="transition hover:text-[#D4AF37]">www.aristondevelopers.com</a>
           </div>

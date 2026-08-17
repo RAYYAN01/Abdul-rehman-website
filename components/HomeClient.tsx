@@ -12,14 +12,14 @@ const ThreeScene = dynamic(() => import('@/components/ThreeScene'), { ssr: false
 
 const featuredProperties = [
   {
-    name: 'Marvella Heights',
+    name: 'Green Orchid',
     price: 'All Sold Out',
-    location: 'HSR Layout, Bangalore',
+    location: 'BHEL Layout, Bangalore',
     beds: 3,
     baths: 4,
     image: '/property-3.jpeg',
     description:
-      'A premium residential development in the heart of HSR Layout, featuring spacious 3-bedroom homes with contemporary architecture and high-end finishes.',
+      'A premium residential development in the heart of BHEL Layout, featuring spacious 3-bedroom homes with contemporary architecture and high-end finishes.',
   },
   {
     name: 'AR Mansion',
@@ -40,14 +40,14 @@ const featuredProperties = [
       'Elegant 4-bedroom homes in BTM 1st Stage, thoughtfully designed with generous living spaces, premium fittings and excellent connectivity.',
   },
   {
-    name: 'Galaxy Residency',
-    price: '1 Unit Left',
+    name: 'Royal Head',
+    price: 'All Sold Out',
     location: 'BTM 1st Stage, Bangalore',
     beds: 4,
     baths: 4,
     image: '/property-9.jpeg',
     description:
-      'Spacious 4-bedroom luxury apartments in BTM 1st Stage with modern amenities. Only one unit remaining — book your private viewing today.',
+      'Spacious 4-bedroom luxury apartments in BTM 1st Stage with modern amenities, thoughtfully designed for elevated everyday living.',
   },
 ];
 
@@ -120,7 +120,7 @@ export default function HomeClient() {
       <section className="relative min-h-[92vh] overflow-hidden bg-[#FAF9F6] pt-20 sm:pt-24">
         <Image
           src="/property-9.jpeg"
-          alt="Galaxy Residency — Ariston Developers flagship property"
+          alt="Royal Head — Ariston Developers flagship property"
           fill
           priority
           sizes="100vw"

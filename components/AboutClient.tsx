@@ -9,7 +9,7 @@ const milestones = [
   { year: '2020', title: 'Where It All Began', description: 'Abdul Rehaman founded Ariston Developers in Jayanagar, Bangalore — with a single promise: to make property buying honest, simple and rewarding for every client.' },
   { year: '2021', title: 'First Projects Delivered', description: 'Completed our first residential projects in South Bangalore. Word spread fast — clients trusted us not just for the buildings, but for the way we treated people.' },
   { year: '2022', title: 'Growing Across Bangalore', description: 'Expanded into BTM Layout, Koramangala and Jayanagar 9th Block. Our team grew alongside our reputation — every deal done with full transparency.' },
-  { year: '2023', title: 'Marvella Heights Launched', description: 'Launched our flagship project Marvella Heights — a premium residential development that sold out within months and set a new benchmark in the area.' },
+  { year: '2023', title: 'Green Orchid Launched', description: 'Launched our flagship project Green Orchid — a premium residential development that sold out within months and set a new benchmark in the area.' },
   { year: '2024', title: 'Trusted by 300+ Families', description: 'Over 300 families placed their trust in us across buying, selling, construction and land development. Every project delivered on time, every promise kept.' },
   { year: '2025', title: 'Expanding Our Vision', description: 'Took on joint venture projects with landowners across South Bangalore, offering transparent models and maximum value — together building something bigger.' },
   { year: '2026', title: 'The Journey Continues', description: 'Today Ariston Developers stands as a name synonymous with integrity in Bangalore real estate. Our next chapter focuses on legacy projects and empowering more families to own their dream home.' },
@@ -17,7 +17,6 @@ const milestones = [
 
 const team = [
   { name: 'Abdul Rehaman', role: 'Founder', social: '+91 99457 26707' },
-  { name: 'Sayyed Altaf', role: 'Co-Founder', social: '+91 99018 45622' },
 ];
 
 const values = [
@@ -61,7 +60,7 @@ export default function AboutClient() {
             <span className="text-sm uppercase tracking-[0.35em] text-[#D4AF37]">Founder Story</span>
             <h2 className="text-3xl font-semibold tracking-tight text-[#1A1A18] sm:text-4xl md:text-5xl">Crafting a legacy of confidence for luxury property seekers.</h2>
             <p className="max-w-3xl text-lg leading-8 text-[#6B6860]">
-              Founded in 2020 by Abdul Rehaman and co-founded by Sayyed Altaf, Ariston Developers was built on a simple belief — every family deserves honest guidance and a home they are proud of.
+              Founded in 2020 by Abdul Rehaman, Ariston Developers was built on a simple belief — every family deserves honest guidance and a home they are proud of.
             </p>
             <div className="grid gap-4 sm:grid-cols-2">
               <div className="glass-card p-6">
@@ -87,21 +86,6 @@ export default function AboutClient() {
                 <div className="grid gap-4 rounded-[28px] border border-black/[0.08] bg-[#FAF9F6] p-6">
                   <p className="text-sm uppercase tracking-[0.3em] text-[#9B9890]">Vision Statement</p>
                   <p className="text-[#4A4A40]">To set the benchmark for premium living experiences through curated spaces, intelligent investment and celebrated service.</p>
-                </div>
-              </div>
-            </div>
-            <div className="relative overflow-hidden rounded-[32px] border border-black/[0.08] bg-white p-8 shadow-md">
-              <div className="absolute inset-0 bg-gradient-to-br from-[#D4AF37]/8 via-transparent to-[#F2EFE8]/60" />
-              <div className="relative flex h-full flex-col justify-between gap-6">
-                <div className="text-[#4A4A40]">
-                  <div className="mb-4 inline-flex rounded-full border border-black/10 bg-black/5 px-4 py-2 text-xs uppercase tracking-[0.35em] text-[#6B6860]">Co-Founder</div>
-                  <p className="text-xl font-semibold text-[#1A1A18]">Sayyed Altaf</p>
-                  <p className="mt-1 text-sm text-[#D4AF37]">+91 99018 45622</p>
-                  <p className="mt-3 text-[#6B6860]">Co-founder and sales strategist at Ariston Developers, driving client relationships and property transactions across Bangalore.</p>
-                </div>
-                <div className="grid gap-4 rounded-[28px] border border-black/[0.08] bg-[#FAF9F6] p-6">
-                  <p className="text-sm uppercase tracking-[0.3em] text-[#9B9890]">Vision Statement</p>
-                  <p className="text-[#4A4A40]">To build lasting relationships — where every client feels heard, every transaction is transparent, and every home delivered becomes a source of pride for generations.</p>
                 </div>
               </div>
             </div>
@@ -152,7 +136,7 @@ export default function AboutClient() {
               Our team combines boutique service, legal expertise, and market execution to deliver premium results across every luxury engagement.
             </p>
           </div>
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-2 max-w-2xl">
+          <div className="grid gap-6 max-w-sm">
             {team.map((member) => (
               <motion.div
                 key={member.name}
@@ -223,10 +207,10 @@ export default function AboutClient() {
           </div>
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {[
-              { src: '/property-3.jpeg', title: 'Marvella Heights', loc: 'HSR Layout' },
+              { src: '/property-3.jpeg', title: 'Green Orchid', loc: 'BHEL Layout' },
               { src: '/property-4.jpeg', title: 'AR Mansion', loc: 'Jayanagar 9th Block' },
               { src: '/property-7.jpeg', title: 'Star Residency', loc: 'BTM 1st Stage' },
-              { src: '/property-9.jpeg', title: 'Galaxy Residency', loc: 'BTM 1st Stage' },
+              { src: '/property-9.jpeg', title: 'Royal Head', loc: 'BTM 1st Stage' },
             ].map((p) => (
               <div key={p.src} className="group overflow-hidden rounded-[24px] border border-black/[0.08] bg-white shadow-sm">
                 <div className="relative h-56 overflow-hidden">
