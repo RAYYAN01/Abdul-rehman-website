@@ -35,11 +35,11 @@ const featuredProperties = [
     name: 'Star Residency',
     price: 'All Sold Out',
     location: 'BTM 1st Stage, Bangalore',
-    beds: 4,
-    baths: 4,
+    beds: 3,
+    baths: 3,
     image: '/property-7.jpeg',
     description:
-      'Elegant 4-bedroom homes in BTM 1st Stage, thoughtfully designed with generous living spaces, premium fittings and excellent connectivity.',
+      'Elegant 3-bedroom homes in BTM 1st Stage, thoughtfully designed with generous living spaces, premium fittings and excellent connectivity.',
   },
   {
     name: 'Royal Heights',
