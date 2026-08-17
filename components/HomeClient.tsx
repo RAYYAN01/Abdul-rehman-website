@@ -25,6 +25,8 @@ const featuredProperties = [
     name: 'AR Mansion',
     price: 'All Sold Out',
     location: 'Jayanagar 9th Block, Bangalore',
+    beds: 3,
+    baths: 3,
     image: '/property-4.jpeg',
     description:
       'An exclusive luxury residence in prestigious Jayanagar 9th Block, crafted with elegant interiors and timeless design for discerning families.',
