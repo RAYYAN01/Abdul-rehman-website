@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import ContactForm from '@/components/ContactForm';
@@ -10,9 +11,13 @@ export default function ContactClient() {
   return (
     <main className="bg-[#FAF9F6] text-[#1A1A18]">
       <section className="relative overflow-hidden bg-[radial-gradient(circle_at_top,_rgba(212,175,55,0.08),_transparent_25%),_linear-gradient(180deg,_#FAF9F6_0%,_#F2EFE8_100%)] px-5 py-16 sm:px-6 sm:py-24 md:px-12">
-        <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-[0.24]"
-          style={{ backgroundImage: 'url(/property-3.jpeg)' }}
+        <Image
+          src="/property-3.jpeg"
+          alt=""
+          fill
+          sizes="100vw"
+          className="absolute inset-0 object-cover object-center opacity-[0.24]"
+          aria-hidden="true"
         />
         <div className="relative mx-auto max-w-6xl text-center">
           <span className="text-sm uppercase tracking-[0.35em] text-[#D4AF37]">Contact</span>

@@ -1,13 +1,9 @@
 const nextConfig = {
   reactStrictMode: true,
-  // Static HTML export so the site can be hosted on GoDaddy shared hosting.
-  output: 'export',
-  // GoDaddy/Apache serves folders as /route/index.html — trailing slash keeps links working.
+  // Site is hosted on Vercel (www.aristondevelopers.com -> Vercel DNS), so
+  // the Next.js server runs there and can optimize images on the fly —
+  // no need for a static export.
   trailingSlash: true,
-  // next/image optimization needs a server; disable it for static export.
-  images: {
-    unoptimized: true,
-  },
 };
 
 export default nextConfig;
