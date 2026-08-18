@@ -227,9 +227,9 @@ export default function HomeClient() {
 
           <div className="grid gap-6 rounded-[32px] border border-black/[0.08] bg-white p-8 shadow-sm sm:grid-cols-2 lg:grid-cols-4">
             {[
-              { label: 'Properties Sold', value: '5' },
+              { label: 'Properties Sold', value: '20-25' },
               { label: 'Happy Clients', value: '20+' },
-              { label: 'Years Experience', value: '6+' },
+              { label: 'Years Experience', value: '8+' },
               { label: 'Investment Value', value: '₹ 75 Cr+' },
             ].map((item) => (
               <div key={item.label} className="rounded-3xl border border-black/[0.08] bg-[#FAF9F6] p-6 text-center">
