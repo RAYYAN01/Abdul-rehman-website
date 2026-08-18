@@ -4,6 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import Footer from '@/components/Footer';
+import { siteBlur } from '@/lib/siteBlur';
 
 const milestones = [
   { year: '2020', title: 'Where It All Began', description: 'Abdul Rehaman founded Ariston Developers in Jayanagar, Bangalore — with a single promise: to make property buying honest, simple and rewarding for every client.' },
@@ -35,7 +36,11 @@ export default function AboutClient() {
           src="/property-4.jpeg"
           alt=""
           fill
+          priority
           sizes="100vw"
+          quality={70}
+          placeholder="blur"
+          blurDataURL={siteBlur['/property-4.jpeg']}
           className="absolute inset-0 object-cover object-center opacity-[0.24]"
           aria-hidden="true"
         />
@@ -200,6 +205,9 @@ export default function AboutClient() {
                     alt={`${p.title}, ${p.loc}`}
                     fill
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                    quality={72}
+                    placeholder={siteBlur[p.src] ? 'blur' : 'empty'}
+                    blurDataURL={siteBlur[p.src]}
                     className="object-cover transition duration-500 group-hover:scale-105"
                   />
                 </div>

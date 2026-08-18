@@ -7,6 +7,7 @@ import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import StickyCTA from '@/components/StickyCTA';
 import Footer from '@/components/Footer';
+import { siteBlur } from '@/lib/siteBlur';
 
 const ThreeScene = dynamic(() => import('@/components/ThreeScene'), { ssr: false });
 
@@ -133,6 +134,9 @@ export default function HomeClient() {
           fill
           priority
           sizes="100vw"
+          quality={70}
+          placeholder="blur"
+          blurDataURL={siteBlur['/property-9.jpeg']}
           className="object-cover object-center"
           style={{ opacity: 0.22 }}
         />
@@ -237,6 +241,9 @@ export default function HomeClient() {
                 alt={`Upcoming Ariston Developers project — preview ${index + 1}`}
                 fill
                 sizes="(max-width: 640px) 50vw, 25vw"
+                quality={72}
+                placeholder={siteBlur[src] ? 'blur' : 'empty'}
+                blurDataURL={siteBlur[src]}
                 className="object-cover transition duration-500 group-hover:scale-105"
               />
             </motion.div>
@@ -319,6 +326,9 @@ export default function HomeClient() {
                     alt={`${property.name}, ${property.location}`}
                     fill
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                    quality={72}
+                    placeholder={siteBlur[property.image] ? 'blur' : 'empty'}
+                    blurDataURL={siteBlur[property.image]}
                     className="object-cover"
                   />
                   <button

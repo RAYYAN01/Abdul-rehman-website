@@ -6,6 +6,7 @@ import { motion } from 'framer-motion';
 import ContactForm from '@/components/ContactForm';
 import Footer from '@/components/Footer';
 import ServiceTabs from '@/components/ServiceTabs';
+import { siteBlur } from '@/lib/siteBlur';
 
 export default function ContactClient() {
   return (
@@ -15,7 +16,11 @@ export default function ContactClient() {
           src="/property-3.jpeg"
           alt=""
           fill
+          priority
           sizes="100vw"
+          quality={70}
+          placeholder="blur"
+          blurDataURL={siteBlur['/property-3.jpeg']}
           className="absolute inset-0 object-cover object-center opacity-[0.24]"
           aria-hidden="true"
         />

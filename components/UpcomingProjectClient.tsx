@@ -6,6 +6,7 @@ import Link from 'next/link';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import Footer from '@/components/Footer';
 import { rooms, totalRenders, type Render } from '@/lib/upcomingProject';
+import { blurMap } from '@/lib/renderBlur';
 
 function RenderCard({ render, index }: { render: Render; index: number }) {
   const ref = useRef<HTMLDivElement>(null);
@@ -32,6 +33,10 @@ function RenderCard({ render, index }: { render: Render; index: number }) {
             alt={render.caption}
             fill
             sizes="(max-width: 1024px) 100vw, 50vw"
+            quality={72}
+            priority={index === 0}
+            placeholder={blurMap[render.src] ? 'blur' : 'empty'}
+            blurDataURL={blurMap[render.src]}
             className="object-cover transition duration-700 group-hover:scale-[1.04]"
           />
         </motion.div>
