@@ -10,6 +10,13 @@ import Footer from '@/components/Footer';
 
 const ThreeScene = dynamic(() => import('@/components/ThreeScene'), { ssr: false });
 
+const upcomingProjectImages = [
+  '/upcoming-1.jpeg',
+  '/upcoming-2.jpeg',
+  '/upcoming-3.jpeg',
+  '/upcoming-4.jpeg',
+];
+
 const featuredProperties = [
   {
     name: 'Green Orchid',
@@ -199,6 +206,61 @@ export default function HomeClient() {
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Upcoming Project */}
+      <section className="relative overflow-hidden border-t border-black/[0.08] bg-[#12110F] px-5 py-16 text-white sm:px-6 md:px-12 md:py-24">
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_right,_rgba(212,175,55,0.18),_transparent_45%)]" />
+        <div className="relative mx-auto max-w-7xl">
+          <div className="mb-10 flex flex-col items-start gap-4 md:mb-14">
+            <span className="inline-flex items-center gap-2 rounded-full border border-[#D4AF37]/40 bg-[#D4AF37]/10 px-4 py-2 text-xs uppercase tracking-[0.35em] text-[#D4AF37]">
+              <span className="relative flex h-2 w-2">
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#D4AF37] opacity-75" />
+                <span className="relative inline-flex h-2 w-2 rounded-full bg-[#D4AF37]" />
+              </span>
+              Upcoming Project
+            </span>
+            <h2 className="max-w-3xl text-3xl font-semibold leading-tight sm:text-4xl md:text-5xl">
+              Something Extraordinary Is Coming to Bangalore.
+            </h2>
+            <p className="max-w-2xl text-lg leading-8 text-white/70">
+              Our next signature development is in the final stages of planning — an exclusive address built for those who expect nothing less than exceptional.
+            </p>
+          </div>
+
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {upcomingProjectImages.map((src, index) => (
+              <motion.div
+                key={src}
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ duration: 0.5, delay: index * 0.08 }}
+                className="group relative aspect-[4/5] overflow-hidden rounded-[24px] border border-white/10"
+              >
+                <Image
+                  src={src}
+                  alt={`Upcoming Ariston Developers project — preview ${index + 1}`}
+                  fill
+                  sizes="(max-width: 640px) 50vw, 25vw"
+                  className="object-cover transition duration-500 group-hover:scale-105"
+                />
+                <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
+              </motion.div>
+            ))}
+          </div>
+
+          <div className="mt-10 flex justify-center md:mt-14">
+            <a
+              href="/upcoming-project.pdf"
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-2 rounded-full bg-[#D4AF37] px-8 py-4 text-sm font-semibold text-black transition hover:bg-[#c99b28]"
+            >
+              Press for More Info
+            </a>
           </div>
         </div>
       </section>
