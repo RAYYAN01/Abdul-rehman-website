@@ -10,7 +10,12 @@ const videos = [
   '/gallery-3.mp4',
   '/gallery-4.mp4',
   '/gallery-5.mp4',
+  '/gallery-6.mp4',
+  '/gallery-7.mp4',
+  '/gallery-8.mp4',
 ];
+
+const posterFor = (src: string) => src.replace('/gallery-', '/posters/gallery-').replace('.mp4', '.jpg');
 
 function VideoCard({ src, index }: { src: string; index: number }) {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -72,6 +77,7 @@ function VideoCard({ src, index }: { src: string; index: number }) {
       <video
         ref={videoRef}
         src={src}
+        poster={posterFor(src)}
         muted
         loop
         playsInline
