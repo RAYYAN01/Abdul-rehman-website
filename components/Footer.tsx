@@ -120,7 +120,8 @@ export default function Footer() {
       </div>
 
       <div className="mt-12 border-t border-black/[0.08] pt-8 text-center text-xs text-[#9B9890]">
-        © {new Date().getFullYear()} Ariston Developers. All rights reserved.
+        <p>© {new Date().getFullYear()} Ariston Developers. All rights reserved.</p>
+        <p className="mt-1.5">Developed by Naaz AI Labs</p>
       </div>
     </footer>
   );
