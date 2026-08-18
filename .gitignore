@@ -22,3 +22,6 @@ yarn-error.log*
 
 # Source design files (not deployed)
 design-source/
+
+# Unprocessed source media dropped into public/
+public/WhatsApp*.mp4
