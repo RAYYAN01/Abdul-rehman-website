@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import { useRef } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { motion, useScroll, useTransform } from 'framer-motion';
@@ -70,26 +70,7 @@ function RenderCard({ render, index }: { render: Render; index: number }) {
 }
 
 export default function UpcomingProjectClient() {
-  const [activeRoom, setActiveRoom] = useState(rooms[0].id);
   const { scrollYProgress } = useScroll();
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const visible = entries
-          .filter((e) => e.isIntersecting)
-          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
-        if (visible) setActiveRoom(visible.target.id);
-      },
-      { rootMargin: '-45% 0px -45% 0px', threshold: [0, 0.25, 0.5, 1] }
-    );
-
-    rooms.forEach((room) => {
-      const el = document.getElementById(room.id);
-      if (el) observer.observe(el);
-    });
-    return () => observer.disconnect();
-  }, []);
 
   return (
     <main className="bg-[#FAF9F6] text-[#1A1A18]">
@@ -147,31 +128,12 @@ export default function UpcomingProjectClient() {
         </div>
       </section>
 
-      {/* Sticky room nav */}
-      <div className="sticky top-16 z-40 border-y border-black/[0.08] bg-[#FAF9F6]/85 backdrop-blur-md sm:top-20">
-        <div className="mx-auto flex max-w-7xl gap-2 overflow-x-auto px-5 py-3 sm:px-6 md:px-12">
-          {rooms.map((room) => (
-            <a
-              key={room.id}
-              href={`#${room.id}`}
-              className={`whitespace-nowrap rounded-full px-4 py-2 text-sm font-medium transition ${
-                activeRoom === room.id
-                  ? 'bg-[#D4AF37] text-black'
-                  : 'text-[#6B6860] hover:bg-black/5 hover:text-[#1A1A18]'
-              }`}
-            >
-              {room.name}
-            </a>
-          ))}
-        </div>
-      </div>
-
       {/* Rooms */}
       {rooms.map((room, roomIndex) => (
         <section
           key={room.id}
           id={room.id}
-          className={`scroll-mt-32 border-b border-black/[0.08] px-5 py-16 sm:px-6 md:px-12 md:py-24 ${
+          className={`scroll-mt-24 border-b border-black/[0.08] px-5 py-16 sm:px-6 md:px-12 md:py-24 ${
             roomIndex % 2 === 0 ? 'bg-[#FAF9F6]' : 'bg-[#F2EFE8]'
           }`}
         >
