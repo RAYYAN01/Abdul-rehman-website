@@ -244,14 +244,12 @@ export default function HomeClient() {
         </div>
 
         <div className="mt-10 flex justify-center md:mt-14">
-          <a
-            href="/upcoming-project.pdf"
-            target="_blank"
-            rel="noreferrer"
+          <Link
+            href="/upcoming-project"
             className="inline-flex items-center gap-2 rounded-full bg-[#D4AF37] px-8 py-4 text-sm font-semibold text-black transition hover:bg-[#c99b28]"
           >
             Press for More Info
-          </a>
+          </Link>
         </div>
       </section>
 

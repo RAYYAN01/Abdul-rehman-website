@@ -19,3 +19,6 @@ yarn-error.log*
 .vercel
 
 .vercel
+
+# Source design files (not deployed)
+design-source/
