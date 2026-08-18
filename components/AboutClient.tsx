@@ -27,13 +27,6 @@ const values = [
   { title: 'Customer Success', description: 'Priority on long-term investment outcomes.' },
 ];
 
-const awards = [
-  'Luxury Living Awards 2024',
-  'Best Property Developer Bangalore 2023',
-  'Top Boutique Agency 2022',
-  'Architectural Excellence Partner 2024',
-];
-
 export default function AboutClient() {
   return (
     <main className="bg-[#FAF9F6] text-[#1A1A18]">
@@ -178,22 +171,6 @@ export default function AboutClient() {
                 <h3 className="text-2xl font-semibold text-[#1A1A18]">{value.title}</h3>
                 <p className="mt-4 text-[#6B6860]">{value.description}</p>
               </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="border-t border-black/[0.08] bg-[#FAF9F6] px-5 py-12 sm:px-6 md:px-12 md:py-20">
-        <div className="mx-auto max-w-7xl">
-          <div className="mb-12 max-w-3xl">
-            <span className="text-sm uppercase tracking-[0.35em] text-[#D4AF37]">Awards & Recognition</span>
-            <h2 className="mt-4 text-3xl font-semibold tracking-tight text-[#1A1A18] sm:text-4xl md:text-5xl">Industry accolades that confirm our premium position.</h2>
-          </div>
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {awards.map((award) => (
-              <div key={award} className="rounded-[28px] border border-black/[0.08] bg-white p-6 text-[#4A4A40] transition hover:border-[#D4AF37] hover:text-[#1A1A18] shadow-sm">
-                <p className="text-xl font-semibold text-[#1A1A18]">{award}</p>
-              </div>
             ))}
           </div>
         </div>
