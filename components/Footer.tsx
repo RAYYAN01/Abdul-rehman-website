@@ -25,7 +25,7 @@ export default function Footer() {
         {/* Brand */}
         <div className="space-y-5 sm:col-span-2 lg:col-span-1">
           <div className="flex items-center gap-3">
-            <Image src="/logo.jpeg" alt="Ariston Developers" width={48} height={48} className="rounded-full object-cover" />
+            <Image src="/logo-mark.png" alt="Ariston Developers" width={48} height={48} className="object-contain" />
             <div>
               <p className="text-lg font-semibold text-[#1A1A18]">Ariston Developers</p>
               <p className="text-xs uppercase tracking-[0.2em] text-[#D4AF37]">We Build Your Dream Home</p>

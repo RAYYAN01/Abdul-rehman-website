@@ -100,15 +100,15 @@ export default function JsonLd() {
         ],
         image: {
           '@type': 'ImageObject',
-          url: 'https://www.aristondevelopers.com/logo.jpeg',
-          width: 200,
-          height: 200,
+          url: 'https://www.aristondevelopers.com/logo-mark.png',
+          width: 512,
+          height: 512,
         },
         logo: {
           '@type': 'ImageObject',
-          url: 'https://www.aristondevelopers.com/logo.jpeg',
-          width: 200,
-          height: 200,
+          url: 'https://www.aristondevelopers.com/logo-mark.png',
+          width: 512,
+          height: 512,
         },
         knowsAbout: [
           'Luxury Real Estate Bangalore',
