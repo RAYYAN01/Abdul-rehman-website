@@ -90,7 +90,7 @@ export default function ContactClient() {
                 <div className="mt-4 space-y-3 text-[#4A4A40]">
                   <p>Mobile: <Link href="tel:+919945726707" className="text-[#D4AF37]">+91 99457 26707</Link></p>
                   <p>Office: <Link href="tel:08041711912" className="text-[#D4AF37]">080-41711912</Link></p>
-                  <p>Email: <Link href="mailto:ariston1632@gmail.com" className="text-[#D4AF37]">ariston1632@gmail.com</Link></p>
+                  <p>Email: <Link href="mailto:Md@aristondevelopers.com" className="text-[#D4AF37]">Md@aristondevelopers.com</Link></p>
                   <p>Address: #1716/135, East End &ldquo;A&rdquo; Main Road, Jayanagar 9th Block, Bangalore – 560 069</p>
                   <p>Hours: Mon – Sat / 9:00 am – 7:00 pm</p>
                 </div>
