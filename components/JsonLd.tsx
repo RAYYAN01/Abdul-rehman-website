@@ -95,7 +95,7 @@ export default function JsonLd() {
         },
         sameAs: [
           'https://wa.me/919945726707',
-          'https://www.instagram.com/ariston_developers',
+          'https://www.instagram.com/aristondevelopers.in',
           'https://www.linkedin.com/company/ariston-developers',
         ],
         image: {

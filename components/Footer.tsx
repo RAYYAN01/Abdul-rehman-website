@@ -52,7 +52,7 @@ export default function Footer() {
               <FaWhatsapp size={20} />
             </a>
             <a
-              href="https://www.instagram.com/"
+              href="https://www.instagram.com/aristondevelopers.in"
               target="_blank"
               rel="noreferrer"
               aria-label="Instagram"
