@@ -76,7 +76,7 @@ export default function ContactClient() {
               <div className="aspect-[16/9] overflow-hidden rounded-[28px] border border-black/[0.08]">
                 <iframe
                   title="Ariston Developers — Jayanagar Office"
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.8200!2d77.5836!3d12.9243!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae158c3dd2b24d%3A0x8a67e9e4b5f31462!2sJayanagar%209th%20Block%2C%20Bengaluru%2C%20Karnataka%20560069!5e0!3m2!1sen!2sin!4v1710000000000!5m2!1sen!2sin"
+                  src="https://www.google.com/maps?q=Ariston+Developers,+1716/135+E+End+A+Main+Rd,+Jayanagar+9th+Block,+Bengaluru,+Karnataka+560069&output=embed"
                   className="h-full w-full border-0"
                   allowFullScreen
                   loading="lazy"

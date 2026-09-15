@@ -26,10 +26,10 @@ export default function JsonLd() {
         },
         geo: {
           '@type': 'GeoCoordinates',
-          latitude: 12.9243,
-          longitude: 77.5836,
+          latitude: 12.9191608,
+          longitude: 77.5974554,
         },
-        hasMap: 'https://maps.google.com/?q=12.9243,77.5836',
+        hasMap: 'https://www.google.com/maps/place/Ariston+Developers/@12.9191608,77.5974554,17z/data=!3m1!4b1!4m6!3m5!1s0x3bae15d3ba7e6e73:0x24474cf03f54b2b4!8m2!3d12.9191608!4d77.5974554!16s%2Fg%2F11njl8l0qr',
         openingHoursSpecification: {
           '@type': 'OpeningHoursSpecification',
           dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],

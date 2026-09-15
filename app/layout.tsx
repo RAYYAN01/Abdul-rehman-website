@@ -49,8 +49,8 @@ export const metadata: Metadata = {
   other: {
     'geo.region': 'IN-KA',
     'geo.placename': 'Bangalore, Karnataka, India',
-    'geo.position': '12.9243;77.5836',
-    'ICBM': '12.9243, 77.5836',
+    'geo.position': '12.9191608;77.5974554',
+    'ICBM': '12.9191608, 77.5974554',
   },
 };
 
