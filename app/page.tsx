@@ -52,7 +52,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Ariston Developers | Luxury Properties in Bangalore',
     description:
-      'Buy, sell & invest in premium Bangalore properties with Ariston Developers — 15+ years, 420+ properties, ₹2,400 Cr+ placed.',
+      'Buy, sell & invest in premium Bangalore properties with Ariston Developers — 8+ years, 20-25 properties, ₹75 Cr+ placed.',
     images: ['/property-9.jpeg'],
   },
   alternates: {

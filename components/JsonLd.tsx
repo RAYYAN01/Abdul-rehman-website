@@ -11,7 +11,7 @@ export default function JsonLd() {
         url: 'https://www.aristondevelopers.com',
         telephone: ['+91-99457-26707', '+91-80-41711912'],
         email: 'Md@aristondevelopers.com',
-        foundingDate: '2010',
+        foundingDate: '2020',
         slogan: 'We Build Your Dream Home',
         priceRange: '₹₹₹₹',
         currenciesAccepted: 'INR',
@@ -118,13 +118,6 @@ export default function JsonLd() {
           'Residential Construction Bangalore',
           'Premium Property Investment Bangalore',
         ],
-        aggregateRating: {
-          '@type': 'AggregateRating',
-          ratingValue: '4.9',
-          reviewCount: '310',
-          bestRating: '5',
-          worstRating: '1',
-        },
       },
       {
         '@type': 'WebSite',
@@ -183,7 +176,7 @@ export default function JsonLd() {
             name: 'How many years of experience does Ariston Developers have?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: 'Ariston Developers has over 15 years of experience in the Bangalore real estate market since 2010, with 420+ properties sold and ₹2,400 Cr+ in investment value placed for clients.',
+              text: 'Ariston Developers has over 8 years of experience in the Bangalore real estate market since 2020, with 20-25 properties sold and ₹75 Cr+ in investment value placed for clients.',
             },
           },
           {

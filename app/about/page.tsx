@@ -4,7 +4,7 @@ import AboutClient from '@/components/AboutClient';
 export const metadata: Metadata = {
   title: 'About Us',
   description:
-    "Learn about Ariston Developers — founded by Abdul Rehaman, Bangalore's premier luxury property developer with 15+ years of expertise in residential real estate, construction and land development across South Bangalore.",
+    "Learn about Ariston Developers — founded by Abdul Rehaman in 2020, Bangalore's premier luxury property developer with 8+ years of expertise in residential real estate, construction and land development across South Bangalore.",
   keywords: [
     'About Ariston Developers',
     'Abdul Rehaman property developer Bangalore',
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'About Ariston Developers | Premier Property Developer Bangalore',
     description:
-      'Founded by Abdul Rehaman — 15+ years building luxury residential properties across Bangalore with transparency, integrity and design excellence.',
+      'Founded by Abdul Rehaman in 2020 — 8+ years building luxury residential properties across Bangalore with transparency, integrity and design excellence.',
     url: 'https://www.aristondevelopers.com/about',
     siteName: 'Ariston Developers',
     images: [
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'About Ariston Developers | Premier Property Developer Bangalore',
     description:
-      '15+ years of luxury real estate excellence in Bangalore. 420+ properties. ₹2,400 Cr+ in investment value.',
+      '8+ years of luxury real estate excellence in Bangalore. 20-25 properties. ₹75 Cr+ in investment value.',
     images: ['/property-4.jpeg'],
   },
   alternates: {

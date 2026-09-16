@@ -67,7 +67,7 @@ export default function AboutClient() {
             <div className="grid gap-4 sm:grid-cols-2">
               <div className="glass-card p-6">
                 <p className="text-sm uppercase tracking-[0.3em] text-[#9B9890]">Experience</p>
-                <p className="mt-3 text-[#4A4A40]">5+ years in residential property development, construction, land development and joint ventures across South Bangalore.</p>
+                <p className="mt-3 text-[#4A4A40]">8+ years in residential property development, construction, land development and joint ventures across South Bangalore.</p>
               </div>
               <div className="glass-card p-6">
                 <p className="text-sm uppercase tracking-[0.3em] text-[#9B9890]">Achievements</p>
