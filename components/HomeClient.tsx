@@ -50,7 +50,7 @@ const featuredProperties = [
       'Elegant 3-bedroom homes in BTM 1st Stage, thoughtfully designed with generous living spaces, premium fittings and excellent connectivity.',
   },
   {
-    name: 'Royal Heights',
+    name: 'Star Residency',
     price: 'All Sold Out',
     location: 'BTM 1st Stage, Bangalore',
     beds: 4,
@@ -130,7 +130,7 @@ export default function HomeClient() {
       <section className="relative min-h-[92vh] overflow-hidden bg-[#FAF9F6] pt-20 sm:pt-24">
         <Image
           src="/property-9.jpeg"
-          alt="Royal Heights — Ariston Developers flagship property"
+          alt="Star Residency — Ariston Developers flagship property"
           fill
           priority
           sizes="100vw"
