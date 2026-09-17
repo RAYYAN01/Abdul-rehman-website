@@ -222,7 +222,7 @@ export default function HomeClient() {
             <span className="gold-glow-text">Ariston Classic</span> Is Coming to Bangalore.
           </h2>
           <p className="mx-auto max-w-2xl text-lg leading-8 text-[#6B6860]">
-            Introducing Ariston Classic — luxury 4BHK residences in the final stages of planning, an exclusive address built for those who expect nothing less than exceptional.
+            Introducing Ariston Classic in Jayanagar — luxury 4BHK residences in the final stages of planning, an exclusive address built for those who expect nothing less than exceptional.
           </p>
         </div>
 

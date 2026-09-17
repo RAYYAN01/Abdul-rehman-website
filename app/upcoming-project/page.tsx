@@ -2,13 +2,13 @@ import type { Metadata } from 'next';
 import UpcomingProjectClient from '@/components/UpcomingProjectClient';
 
 export const metadata: Metadata = {
-  title: 'Ariston Classic — Upcoming Project',
+  title: 'Ariston Classic — Upcoming Project in Jayanagar',
   description:
-    'Ariston Classic — luxury 4BHK residences launching June 2027 in Bengaluru. Explore interior renders — master bedroom and three bedrooms, room by room.',
+    'Ariston Classic — luxury 4BHK residences launching June 2027 in Jayanagar, Bengaluru. Explore interior renders — master bedroom and three bedrooms, room by room.',
   openGraph: {
     title: 'Ariston Classic | Ariston Developers',
     description:
-      'Luxury 4BHK residences launching June 2027 — a room-by-room walkthrough of the interior design for our next residence in Bengaluru.',
+      'Luxury 4BHK residences launching June 2027 in Jayanagar, Bengaluru — a room-by-room walkthrough of the interior design for our next residence.',
     url: 'https://www.aristondevelopers.com/upcoming-project',
     siteName: 'Ariston Developers',
     images: [

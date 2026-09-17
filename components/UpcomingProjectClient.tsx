@@ -97,7 +97,7 @@ export default function UpcomingProjectClient() {
             transition={{ duration: 0.7, delay: 0.1 }}
             className="text-3xl font-semibold leading-tight text-[#1A1A18] sm:text-5xl"
           >
-            Ariston Classic — Bengaluru Residence
+            Ariston Classic — Jayanagar, Bengaluru
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 24 }}
