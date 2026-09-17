@@ -89,7 +89,7 @@ export default function UpcomingProjectClient() {
             transition={{ duration: 0.6 }}
             className="block text-sm uppercase tracking-[0.35em] text-[#D4AF37]"
           >
-            Upcoming Project
+            Upcoming Project — Launching June 2027
           </motion.span>
           <motion.h1
             initial={{ opacity: 0, y: 24 }}
@@ -97,7 +97,7 @@ export default function UpcomingProjectClient() {
             transition={{ duration: 0.7, delay: 0.1 }}
             className="text-3xl font-semibold leading-tight text-[#1A1A18] sm:text-5xl"
           >
-            Interior Renders — Bengaluru Residence
+            Ariston Classic — Bengaluru Residence
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 24 }}
@@ -105,8 +105,8 @@ export default function UpcomingProjectClient() {
             transition={{ duration: 0.7, delay: 0.2 }}
             className="mx-auto max-w-2xl text-lg leading-8 text-[#6B6860]"
           >
-            A room-by-room walkthrough of the interior design for our next residence — four bedrooms,
-            each with its own material story, captured across {totalRenders} detailed renders.
+            Luxury 4BHK residences launching June 2027. A room-by-room walkthrough of the interior design
+            for our next residence, each with its own material story, captured across {totalRenders} detailed renders.
           </motion.p>
 
           <motion.div
