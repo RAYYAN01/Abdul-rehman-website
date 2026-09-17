@@ -69,4 +69,29 @@ html, body { min-height: 100%; }
   .font-display {
     font-family: var(--font-playfair, 'Playfair Display', Georgia, serif);
   }
+  .gold-glow-text {
+    background: linear-gradient(110deg, #9c7a20 0%, #f5dfa0 30%, #D4AF37 50%, #f5dfa0 70%, #9c7a20 100%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: gold-glow-pulse 5s ease-in-out infinite;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .gold-glow-text {
+      animation: none;
+      filter: drop-shadow(0 0 14px rgba(212, 175, 55, 0.4));
+    }
+  }
+}
+
+@keyframes gold-glow-pulse {
+  0%, 100% {
+    background-position: 0% center;
+    filter: drop-shadow(0 0 8px rgba(212, 175, 55, 0.3)) drop-shadow(0 0 18px rgba(212, 175, 55, 0.15));
+  }
+  50% {
+    background-position: 100% center;
+    filter: drop-shadow(0 0 16px rgba(212, 175, 55, 0.55)) drop-shadow(0 0 32px rgba(212, 175, 55, 0.3));
+  }
 }
