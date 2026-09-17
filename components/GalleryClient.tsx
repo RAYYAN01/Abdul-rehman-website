@@ -17,43 +17,96 @@ const videos = [
 
 const posterFor = (src: string) => src.replace('/gallery-', '/posters/gallery-').replace('.mp4', '.jpg');
 
+type FullscreenVideoElement = HTMLVideoElement & {
+  webkitEnterFullscreen?: () => void;
+  webkitExitFullscreen?: () => void;
+  webkitDisplayingFullscreen?: boolean;
+};
+
+type FullscreenDocument = Document & {
+  webkitFullscreenElement?: Element | null;
+  webkitExitFullscreen?: () => void;
+};
+
 function VideoCard({ src, index }: { src: string; index: number }) {
   const videoRef = useRef<HTMLVideoElement>(null);
-  const [paused, setPaused] = useState(true);
-  const userPaused = useRef(false);
+  const [isFullscreen, setIsFullscreen] = useState(false);
+  const historyPushed = useRef(false);
 
+  // Any exit path (Esc, native close control, programmatic) lands here.
   useEffect(() => {
     const el = videoRef.current;
     if (!el) return;
 
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting && !userPaused.current) {
-          el.play();
-          setPaused(false);
-        } else {
-          el.pause();
-          setPaused(true);
-        }
-      },
-      { threshold: 0.6 }
-    );
-    observer.observe(el);
-    return () => observer.disconnect();
+    const handleExit = () => {
+      const doc = document as FullscreenDocument;
+      const stillFullscreen = doc.fullscreenElement === el || doc.webkitFullscreenElement === el;
+      if (stillFullscreen) return;
+      setIsFullscreen(false);
+      el.pause();
+      if (historyPushed.current) {
+        historyPushed.current = false;
+      }
+    };
+
+    document.addEventListener('fullscreenchange', handleExit);
+    document.addEventListener('webkitfullscreenchange', handleExit);
+    el.addEventListener('webkitendfullscreen', handleExit);
+    return () => {
+      document.removeEventListener('fullscreenchange', handleExit);
+      document.removeEventListener('webkitfullscreenchange', handleExit);
+      el.removeEventListener('webkitendfullscreen', handleExit);
+    };
   }, []);
 
-  const toggle = () => {
-    const el = videoRef.current;
-    if (!el) return;
-    if (el.paused) {
-      userPaused.current = false;
-      el.play();
-      setPaused(false);
-    } else {
-      userPaused.current = true;
+  // Back button (or Android's back gesture) should close fullscreen, not leave the page.
+  useEffect(() => {
+    const onPopState = () => {
+      if (!isFullscreen) return;
+      const el = videoRef.current as FullscreenVideoElement | null;
+      if (!el) return;
+      if (document.fullscreenElement) document.exitFullscreen?.();
+      else if ((document as FullscreenDocument).webkitFullscreenElement) (document as FullscreenDocument).webkitExitFullscreen?.();
+      else el.webkitExitFullscreen?.();
+      setIsFullscreen(false);
       el.pause();
-      setPaused(true);
+    };
+    window.addEventListener('popstate', onPopState);
+    return () => window.removeEventListener('popstate', onPopState);
+  }, [isFullscreen]);
+
+  const play = async () => {
+    const el = videoRef.current as FullscreenVideoElement | null;
+    if (!el) return;
+
+    // iOS Safari doesn't support Fullscreen API on arbitrary elements —
+    // it exposes a dedicated native fullscreen mode on <video> instead.
+    if (typeof el.webkitEnterFullscreen === 'function' && !el.requestFullscreen) {
+      el.muted = false;
+      el.play().catch(() => {});
+      el.webkitEnterFullscreen();
+      setIsFullscreen(true);
+      window.history.pushState({ galleryFullscreen: true }, '');
+      historyPushed.current = true;
+      return;
     }
+
+    try {
+      el.muted = false;
+      await el.play();
+      await el.requestFullscreen();
+      setIsFullscreen(true);
+      window.history.pushState({ galleryFullscreen: true }, '');
+      historyPushed.current = true;
+    } catch {
+      // Fullscreen was blocked — still let it play inline rather than do nothing.
+      el.play().catch(() => {});
+    }
+  };
+
+  const handleClick = () => {
+    if (isFullscreen) return;
+    play();
   };
 
   return (
@@ -62,41 +115,38 @@ function VideoCard({ src, index }: { src: string; index: number }) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.2 }}
       transition={{ duration: 0.55, delay: index * 0.08 }}
-      onClick={toggle}
+      onClick={handleClick}
       role="button"
       tabIndex={0}
       onKeyDown={(e) => {
         if (e.key === 'Enter' || e.key === ' ') {
           e.preventDefault();
-          toggle();
+          handleClick();
         }
       }}
-      aria-label={paused ? 'Play video' : 'Pause video'}
+      aria-label="Play video full screen"
       className="group relative aspect-[9/16] cursor-pointer overflow-hidden rounded-[28px] border border-black/[0.08] bg-black shadow-sm outline-none transition-shadow duration-300 hover:shadow-[0_30px_80px_-40px_rgba(212,175,55,0.5)] focus-visible:ring-2 focus-visible:ring-[#D4AF37]"
     >
       <video
         ref={videoRef}
         src={src}
         poster={posterFor(src)}
-        muted
-        loop
         playsInline
         preload="none"
-        className="h-full w-full object-cover"
+        controls={isFullscreen}
+        className={isFullscreen ? 'h-full w-full bg-black object-contain' : 'h-full w-full object-cover'}
       />
 
-      {/* Pause overlay — only shows when paused */}
-      <div
-        className={`pointer-events-none absolute inset-0 flex items-center justify-center bg-black/30 transition-opacity duration-300 ${
-          paused ? 'opacity-100' : 'opacity-0'
-        }`}
-      >
-        <div className="flex h-16 w-16 items-center justify-center rounded-full bg-[#D4AF37] shadow-lg">
-          <svg className="ml-1 h-6 w-6 text-black" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M8 5v14l11-7z" />
-          </svg>
+      {/* Play overlay — hidden once fullscreen playback takes over */}
+      {!isFullscreen && (
+        <div className="pointer-events-none absolute inset-0 flex items-center justify-center bg-black/20 transition-colors duration-300 group-hover:bg-black/30">
+          <div className="flex h-16 w-16 items-center justify-center rounded-full bg-[#D4AF37] shadow-lg">
+            <svg className="ml-1 h-6 w-6 text-black" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M8 5v14l11-7z" />
+            </svg>
+          </div>
         </div>
-      </div>
+      )}
 
       {/* Gold accent ring on hover */}
       <div className="pointer-events-none absolute inset-0 rounded-[28px] ring-1 ring-inset ring-[#D4AF37]/0 transition duration-300 group-hover:ring-[#D4AF37]/40" />
@@ -117,7 +167,7 @@ export default function GalleryClient() {
           <p className="mx-auto max-w-2xl text-lg leading-8 text-[#6B6860]">
             Explore video walkthroughs of our premium residential developments across Bangalore — crafted by Ariston Developers.
           </p>
-          <p className="text-sm text-[#9B9890]">Tap any video to pause · tap again to play</p>
+          <p className="text-sm text-[#9B9890]">Tap any video to watch full screen</p>
         </div>
       </section>
 
