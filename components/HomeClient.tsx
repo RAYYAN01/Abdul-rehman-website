@@ -20,7 +20,7 @@ const upcomingProjectImages = [
 
 const featuredProperties = [
   {
-    name: 'Green Orchid',
+    name: 'Marvella Heights',
     price: 'All Sold Out',
     location: 'BHEL Layout, Bangalore',
     beds: 3,
@@ -40,7 +40,7 @@ const featuredProperties = [
       'An exclusive luxury residence in prestigious Jayanagar 9th Block, crafted with elegant interiors and timeless design for discerning families.',
   },
   {
-    name: 'Star Residency',
+    name: 'Bait-Al-Nasr',
     price: 'All Sold Out',
     location: 'BTM 1st Stage, Bangalore',
     beds: 3,
@@ -50,7 +50,7 @@ const featuredProperties = [
       'Elegant 3-bedroom homes in BTM 1st Stage, thoughtfully designed with generous living spaces, premium fittings and excellent connectivity.',
   },
   {
-    name: 'Star Residency',
+    name: 'MD Royal Heights',
     price: 'All Sold Out',
     location: 'BTM 1st Stage, Bangalore',
     beds: 4,
@@ -130,7 +130,7 @@ export default function HomeClient() {
       <section className="relative min-h-[92vh] overflow-hidden bg-[#FAF9F6] pt-20 sm:pt-24">
         <Image
           src="/property-9.jpeg"
-          alt="Star Residency — Ariston Developers flagship property"
+          alt="MD Royal Heights — Ariston Developers flagship property"
           fill
           priority
           sizes="100vw"

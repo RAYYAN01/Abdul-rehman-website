@@ -10,7 +10,7 @@ const milestones = [
   { year: '2020', title: 'Where It All Began', description: 'Abdul Rehaman founded Ariston Developers in Jayanagar, Bangalore — with a single promise: to make property buying honest, simple and rewarding for every client.' },
   { year: '2021', title: 'First Projects Delivered', description: 'Completed our first residential projects in South Bangalore. Word spread fast — clients trusted us not just for the buildings, but for the way we treated people.' },
   { year: '2022', title: 'Growing Across Bangalore', description: 'Expanded into BTM Layout, Koramangala and Jayanagar 9th Block. Our team grew alongside our reputation — every deal done with full transparency.' },
-  { year: '2023', title: 'Green Orchid Launched', description: 'Launched our flagship project Green Orchid — a premium residential development that sold out within months and set a new benchmark in the area.' },
+  { year: '2023', title: 'Marvella Heights Launched', description: 'Launched our flagship project Marvella Heights — a premium residential development that sold out within months and set a new benchmark in the area.' },
   { year: '2024', title: 'Trusted by 300+ Families', description: 'Over 300 families placed their trust in us across buying, selling, construction and land development. Every project delivered on time, every promise kept.' },
   { year: '2025', title: 'Expanding Our Vision', description: 'Took on joint venture projects with landowners across South Bangalore, offering transparent models and maximum value — together building something bigger.' },
   { year: '2026', title: 'The Journey Continues', description: 'Today Ariston Developers stands as a name synonymous with integrity in Bangalore real estate. Our next chapter focuses on legacy projects and empowering more families to own their dream home.' },
@@ -193,10 +193,10 @@ export default function AboutClient() {
           </div>
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {[
-              { src: '/property-3.jpeg', title: 'Green Orchid', loc: 'BHEL Layout' },
+              { src: '/property-3.jpeg', title: 'Marvella Heights', loc: 'BHEL Layout' },
               { src: '/property-4.jpeg', title: 'AR Mansion', loc: 'Jayanagar 9th Block' },
-              { src: '/property-7.jpeg', title: 'Star Residency', loc: 'BTM 1st Stage' },
-              { src: '/property-9.jpeg', title: 'Star Residency', loc: 'BTM 1st Stage' },
+              { src: '/property-7.jpeg', title: 'Bait-Al-Nasr', loc: 'BTM 1st Stage' },
+              { src: '/property-9.jpeg', title: 'MD Royal Heights', loc: 'BTM 1st Stage' },
             ].map((p) => (
               <div key={p.src} className="group overflow-hidden rounded-[24px] border border-black/[0.08] bg-white shadow-sm">
                 <div className="relative h-56 overflow-hidden">
